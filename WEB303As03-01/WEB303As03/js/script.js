@@ -11,16 +11,24 @@ $(document).ready(function() {
 //Functions
 
 function jQueryGetJSON() {
-     $.getJSON("team.json", function(data) {
-        $.each(data, function(i, field){
-            let teamName = $("<h2></h2>").text(field.name);
-            let teamPost = $("<h5></h5>").text(field.position);
-            let teamBio = $("<p></p>").text(field.bio);
-
-            $("div#team").append(teamName + "<br>");
-            $("div#team").append(teamPost + "<br>");
-            $("div#team").append(teamBio + "<br><br>");
+    $.getJSON("team.json").done(function (data) {
+      $.each(data, function (i, value) {
+        $("div#team").append("<h2> Name: " + value.name + "</h2>");
+        $("div#team").append("<h5> Name: " + value.position + "</h5>");
+        $("div#team").append("<p> Name: " + value.bio + "</p>");
+      });
+    });
+  }
+  
+  function jQueryAjax() {
+    $.ajax({
+      url: "team.json",
+      success: function (data) {
+        $.each(data, function (i, value) {
+          $("div#team").append("<h2> Name: " + value.name + "</h2>");
+          $("div#team").append("<h5> Name: " + value.position + "</h5>");
+          $("div#team").append("<p> Name: " + value.bio + "</p>");
         });
-     });
-}
-
+      }
+    });
+  }
