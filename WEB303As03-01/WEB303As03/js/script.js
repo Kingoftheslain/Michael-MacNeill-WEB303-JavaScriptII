@@ -23,7 +23,13 @@ function jQueryGetJSON() {
   function jQueryAjax() {
     $.ajax({
       url: "team.json",
+      beforeSend: function () {
+        $("div#team").append("<h1>loading...</h1>").delay(5000);
+      },
+  
       success: function (data) {
+        $("#team h1").remove();
+  
         $.each(data, function (i, value) {
           $("div#team").append("<h2> Name: " + value.name + "</h2>");
           $("div#team").append("<h5> Name: " + value.position + "</h5>");
