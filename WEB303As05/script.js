@@ -6,7 +6,59 @@
 */
 
 $(document).ready(function () {
-    // your code here
+    // The Working Code for the Assignment
+    class ContentItem {
+
+        id;
+        name;
+        type;
+        desc;
+
+        constructor(id, name, type, desc){
+            this.id = id;
+            this.name = name;
+            this.type = type;
+            this.desc = desc;
+        }
+
+        updateContentInfo(id, name, type, desc){
+            if(id === this.id && (name !== null)){
+                this.id = id;
+                this.name = name;
+                this.type = type;
+                this.desc = desc;
+
+                $('content-item-' + this.id).innerHTML = "<div class='itemContent' id='content-item-" + this.id + "'>" +
+                                                         "<h2>" + this.name + "</h2>" +
+                                                         "<p>" + this.type + "</p>" +
+                                                         "<div>" + this.desc + "</div>" +
+                                                         "</div>";
+            } 
+            else {
+                alert("There has been an error!");
+            }
+        }
+
+        toString(id, name, type, desc) {
+            return "<div class='itemContent' id='content-item-" + this.id + "'>" +
+                   "<h2>" + this.name + "</h2>" +
+                   "<p>" + this.type + "</p>" +
+                   "<div>" + this.desc + "</div>" +
+                   "</div>";
+        }
+    }
+
+    let pharma = [
+                    new ContentItem(0, 'Tylenol', 'Pill', 'Extra Strength Pain Relief'),
+                    new ContentItem(1, 'Buckleys', 'Liquid', 'Cold and Cough Relief'),
+                    new ContentItem(2, 'Alieve', 'Pill', 'Naproxen Muscle Relaxant'),
+                    new ContentItem(3, 'Halls', 'Dissolvable', 'Cough Relief'),
+                    new ContentItem(4, 'Traumeel', 'Paste', 'Pain Relief Cream'),
+                 ];
+
+    pharma.forEach(ContentItem => {
+        $("#content-item-list").append(ContentItem.toString());
+    });
     
 });
 
