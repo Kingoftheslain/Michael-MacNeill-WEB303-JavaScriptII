@@ -73,6 +73,7 @@ $(document).ready(function () {
 
     $('#failInfo').on('click', function(){
         item[3].updateContentInfo(30, 'Halls', 'Lozenges', 'Cough Relief');
+        alert("There has been an error!");
     });
 });
 
