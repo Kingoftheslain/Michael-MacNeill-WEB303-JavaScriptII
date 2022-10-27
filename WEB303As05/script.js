@@ -28,11 +28,9 @@ $(document).ready(function () {
                 this.type = type;
                 this.desc = desc;
 
-                $('content-item-' + this.id).innerHTML = "<div class='itemContent' id='content-item-" + this.id + "'>" +
-                                                         "<h2>" + this.name + "</h2>" +
-                                                         "<p>" + this.type + "</p>" +
-                                                         "<div>" + this.desc + "</div>" +
-                                                         "</div>";
+                document.getElementById("content-item-4").innerHTML = "<h2>" + this.name + "</h2>" +
+                "<p>" + this.type + "</p>" +
+                "<div>" + this.desc + "</div>"
             } 
             else {
                 alert("There has been an error!");
@@ -68,12 +66,11 @@ $(document).ready(function () {
                           });
 
     $('#updateInfo').on('click', function(){
-        item[3].updateContentInfo(4, 'Halls', 'Lozenges', 'Cough Relief');
+        pharma[3].updateContentInfo(4, 'Halls', 'Lozenges', 'Cough Relief');
     });
 
     $('#failInfo').on('click', function(){
-        item[3].updateContentInfo(30, 'Halls', 'Lozenges', 'Cough Relief');
-        alert("There has been an error!");
+        pharma[3].updateContentInfo(30, 'Halls', 'Lozenges', 'Cough Relief');
     });
 });
 
