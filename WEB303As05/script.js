@@ -49,17 +49,31 @@ $(document).ready(function () {
     }
 
     let pharma = [
-                    new ContentItem(0, 'Tylenol', 'Pill', 'Extra Strength Pain Relief'),
-                    new ContentItem(1, 'Buckleys', 'Liquid', 'Cold and Cough Relief'),
-                    new ContentItem(2, 'Alieve', 'Pill', 'Naproxen Muscle Relaxant'),
-                    new ContentItem(3, 'Halls', 'Dissolvable', 'Cough Relief'),
-                    new ContentItem(4, 'Traumeel', 'Paste', 'Pain Relief Cream'),
+                    new ContentItem(1, 'Tylenol', 'Pill', 'Extra Strength Pain Relief'),
+                    new ContentItem(2, 'Buckleys', 'Liquid', 'Cold and Cough Relief'),
+                    new ContentItem(3, 'Alieve', 'Pill', 'Naproxen Muscle Relaxant'),
+                    new ContentItem(4, 'Halls', 'Dissolvable', 'Cough Relief'),
+                    new ContentItem(5, 'Traumeel', 'Paste', 'Pain Relief Cream'),
                  ];
 
     pharma.forEach(ContentItem => {
         $("#content-item-list").append(ContentItem.toString());
     });
     
+    $(".itemContent").css({
+                            'border': '1px solid black',
+                            'margin': 'auto',
+                            'margin-bottom': '5%',
+                            'text-align': 'center'
+                          });
+
+    $('#updateInfo').on('click', function(){
+        item[3].updateContentInfo(4, 'Halls', 'Lozenges', 'Cough Relief');
+    });
+
+    $('#failInfo').on('click', function(){
+        item[3].updateContentInfo(30, 'Halls', 'Lozenges', 'Cough Relief');
+    });
 });
 
 
