@@ -1,0 +1,20 @@
+#wrapper {
+    width: 100%;
+}
+form {
+    font-size: 1.5em;
+    background-color:burlywood;
+    margin: 0 auto;
+    width: 23%;
+    display: block;
+    border: 5px solid black;
+    padding: 3px;
+}
+label,input,select {
+    display: inline-block;
+    margin-top: 5%;
+}
+#sbmt {
+    margin-left: 25%;
+    margin-bottom: 5%;
+}
