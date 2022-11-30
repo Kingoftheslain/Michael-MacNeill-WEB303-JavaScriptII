@@ -3,18 +3,21 @@
 }
 form {
     font-size: 1.5em;
-    background-color:burlywood;
+    background-color:Ivory;
     margin: 0 auto;
-    width: 23%;
+    width: 35%;
     display: block;
-    border: 5px solid black;
+    border: 1px dashed black;
     padding: 3px;
 }
 label,input,select {
     display: inline-block;
     margin-top: 5%;
+    width: 95%;
 }
-#sbmt {
-    margin-left: 25%;
-    margin-bottom: 5%;
+
+#submit {
+    width: 30%;
+    display: inline-block;
+    background-color: blueviolet;
 }
